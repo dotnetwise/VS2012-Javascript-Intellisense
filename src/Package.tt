@@ -1,0 +1,52 @@
+﻿<!--<#@ template language="C#" #>
+<#@ output extension=".nuspec" #>
+<# WriteLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>"); #>
+-->
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>VS2012-Javascript-Intellisense</id>
+    <version><![CDATA[1.0.<#= this.RevisionNumber #>.<#= this.BuildNumber #>]]></version>
+    <title>VS2012-Javascript-Intellisense</title>
+    <authors>DotNetWise</authors>
+    <description>Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!</description>
+    <owners>DotNetWise</owners>
+    <releaseNotes>
+    </releaseNotes>
+    <summary>
+      Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!
+    </summary>
+    <language>en-US</language>
+    <projectUrl>https://github.com/DotNetWise/VS2012-Javascript-Intellisense</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl></iconUrl>
+    <!--<licenseUrl></licenseUrl>-->
+    <copyright>Copyright DotNetWise 2013</copyright>
+    <dependencies>
+      <group targetFramework="net40">
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Data" />
+      <frameworkAssembly assemblyName="System.Configuration" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" />
+      <frameworkAssembly assemblyName="System.Data.DataSetExtensions" />
+      <frameworkAssembly assemblyName="System.Data.Entity" />
+      <frameworkAssembly assemblyName="System.ServiceModel" />
+      <frameworkAssembly assemblyName="System.Transactions" />
+      <frameworkAssembly assemblyName="System.Web" />
+      <frameworkAssembly assemblyName="System.Web.Abstractions" />
+      <frameworkAssembly assemblyName="System.Web.ApplicationServices" />
+    </frameworkAssemblies>
+    <references></references>
+    <tags>Javascript,VS2012,Intellisense</tags>
+  </metadata>
+  <files>
+    <file src="lib\" target="lib" />
+    <file src="tools\" target="tools" />
+    <file src="content\" target="content" />
+  </files>
+</package>
+<#+
+  int RevisionNumber = DateTime.UtcNow.Month * 100 + DateTime.UtcNow.Day;
+int BuildNumber = DateTime.UtcNow.Hour * 100 + DateTime.UtcNow.Minute;
+#>
