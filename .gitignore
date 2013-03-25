@@ -110,3 +110,4 @@ UpgradeLog*.XML
 /src/Scripts/jquery-1.9.1.js
 /src/Scripts/jquery-1.9.1.min.js
 /src/Scripts/jquery-1.9.1.min.map
+/.nuget/NuGet.Config

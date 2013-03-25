@@ -23,6 +23,8 @@
 		this.thisNamespace = Namespace;
 		this.thisEnum = Color.Red;
 	}
+	Class.__map = true;
+	Demo.a = Class;
 	Class.__class = true;
 	Class.prototype.protoMethod = function () { };
 	Class.prototype.protoFieldObject = {};
