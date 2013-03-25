@@ -1,13 +1,38 @@
 # VS2012 Javascript Intellisense 
+
 This project aims to help your `Visual Studio 2012 intellisense` by providing much better
 icons for your members.
 
+## What's in the box?
+
+* [Namespaces](VS2012-Javascript-Intellisense#namespaces)
+* [Classes](VS2012-Javascript-Intellisense#classes)
+* [Enums](VS2012-Javascript-Intellisense#enums)
 
 ## Namespaces
 
-All icons look the same for properties and methods. Also all methods of `Object.prtotype` are shown,
-although they are not very useful on a `namespace`
+In order to define a namespace we simply set on an object `__namespace = true`
 
+We can also define a namespace with the helper function `namespace` or shortland `ns` as below:
+```javascript
+namespace("Demo.controllers")
+ns("mvvm/knockout", Demo, "/") //place the namespace in an existing namespace and use a custom separator
+```
+
+For example
+```javascript
+$.extend(Demo, {
+    Class: Class,
+	colors: colors,
+	IUser: IUser,
+	map: map,
+	fieldFunction: function () {},
+	fieldBoolean: false,
+	fieldString: "",
+	fieldNumber: 1,
+});
+```
+When we'll write `Demo.` the intellisense would look like:
 <div class="issues-list">
     <table>
         <tr>
@@ -34,6 +59,9 @@ although they are not very useful on a `namespace`
                     <li title="Objects with __namespace == true">
                         <img src="../../wiki/images/icons/Namespace.png" alt="namespace" /><code>namespaces</code> icon,
                         including nested ones</li>
+                    <li title="functions or objects with __enum == true">
+                        <img src="../../wiki/images/icons/Enum.png" alt="Enum" /><code>Enum</code> icon
+                    </li>
                     <li><code>fields</code> by their initialized <code>type</code>
                         <ul>
                             <li title="Boolean Field">
@@ -62,6 +90,30 @@ although they are not very useful on a `namespace`
 ## Classes
 Although javascript doesn't support `classes` it does support `constructor functions`<br />
 VS2012 by default only uses two icons to render properties and methods.
+```javascript
+function Class() {
+		this.onClick = function () { },
+		this.thisUndefined = undefined;
+		this.thisNumber = 1;
+		this.thisString = "";
+		this.thisBoolean = true;
+		this.thisNull = null;
+		this.thisObject = {};
+		this.thisFunction = function () { };
+		this.thisRegExp = /a/g;
+		this.thisDomElement = document.body;
+		this.thisClass = Class;
+		this.thisClassInstance = new Enumerator();
+		this.thisNamespace = Namespace;
+		this.thisEnum = Color.Red;
+	}
+	Class.__class = true;
+	Class.prototype.protoMethod = function () { };
+	Class.prototype.protoFieldObject = {};
+	Class.prototype.protoFieldBool = false;
+	var c = new Class();
+```
+When we'll write `c.` the intellisense would look like:
 <div class="issues-list">
     <table>
         <tr>
@@ -92,7 +144,8 @@ VS2012 by default only uses two icons to render properties and methods.
                         <img src="../../wiki/images/icons/PrototypeMethod.png" alt="Prototype method">Distinct <code>function</code>
                         icon for <b>prototype's</b> methods</li>
                     <li title="All functions defined on Object.prototype">
-                        <img src="../../wiki/images/icons/ObjectPrototypeMethod.png" alt="Object.prototype">Distinct icons
+                        <img src="../../wiki/images/icons/ObjectPrototypeMethod.png" alt="Object.prototype">Distinct
+                        icons
                         for <code>Object.prototype</code>'s methods</li>
                     <li title="This is shown only on functions and is not present in the image"><code>prototype</code>
                         custom icon</li>
@@ -128,3 +181,44 @@ VS2012 by default only uses two icons to render properties and methods.
     </table>
 </div>
 
+## Enums
+Although javascript doesn't support `enums` in the .NET sense, it can be very simple achived
+as we can defined as an object<br />
+To enable the feature either use the `Enum` function or manually set `__enum = true` on your
+object.
+```javascript
+Color = new Enum({ Red: 1, Yellow: 2, White: 3 });
+```
+<div class="issues-list">
+    <table>
+        <tr>
+            <th>Before</th>
+            <th>After</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <a href="../../wiki/images/OldEnum.png" target="_blank">
+                    <img src="../../wiki/images/OldEnum.png" alt="Old Enum">
+                </a>
+            </td>
+            <td>
+                <a href="../../wiki/images/EnumMembers.png" target="_blank">
+                    <img src="../../wiki/images/EnumMembers.png" alt="New Enum">
+                </a>
+            </td>
+            <td>
+                <ul>
+                    <li title="functions or objects with __enum == true">
+                        <img src="../../wiki/images/icons/Enum.png" alt="Enum" /><code>Enum</code> icon
+                    </li>
+                    <li title="The enum members are shown as fields based on their value type">
+                        <img src="../../wiki/images/icons/Number.png" alt="Enum Member"><code>Enum members</code> based
+                        on thier value type</li>
+                    <li title="Although they are still accessible, intellisese just hides them">Automcatically hide
+                        Object.prototype methods in enums</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
