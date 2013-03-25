@@ -224,6 +224,35 @@ Color = new Enum({ Red: 1, Yellow: 2, White: 3 });
     </table>
 </div>
 
+# Usage
+## Explicit options
+You can set any of these on your objects/functions accordingly: 
+* ![](../wiki/images/icons/Namespace.png)`__namespace = true` - makes an object to look like a namespace
+* ![](../wiki/images/icons/Class.png)`__class = true` - makes an function to look like a class
+* ![](../wiki/images/icons/Enum.png)`__enum = true` - makes an object to look like an enum
+* ![](../wiki/images/icons/Interface.png)`__interface = true` - makes a function to look like an interface
+* ![](../wiki/images/icons/Map.png)`__map = true` - makes an object to look like a dictionary
+* ![](../wiki/images/icons/Const.png)`__const = true` - makes an object to look like a constant
+* ![](../wiki/images/icons/Event.png)`__event = true` - makes an object to look like an event
+* ![](../wiki/images/icons/Delegate.png)`__delegate = true` - makes a function to look like a delegate
+
+## Implicit options
+Besides the explicit setting of the above options, following rules apply:
+* ![](../wiki/images/icons/Event.png)Anything named `on****` will be considered an event
+* ![](../wiki/images/icons/Class.png)Anything named with an `Uppercase` letter will be considered a Class
+* Fields will automatically be declared by their current value type i.e.   
+ * ![](../wiki/images/icons/Number.png)`Number`
+ * ![](../wiki/images/icons/Boolean.png)`Boolean`
+ * ![](../wiki/images/icons/String.png)`String`
+ * ![](../wiki/images/icons/RegExp.png)`RegExp`
+ * ![](../wiki/images/icons/Null.png)`null`
+ * ![](../wiki/images/icons/Undefined.png)`undefined`
+* ![](../wiki/images/icons/Class.png)Anything named `constructor` is always considered a Class
+* ![](../wiki/images/icons/ObjectPrototypeMethod.png)Methods defined on `Object.prototype` have specific glyph icon
+* ![](../wiki/images/icons/PrototypeMethod.png)Methods defined on custom `.prototype` have specific glyph icon (like an external method)
+* ![](../wiki/images/icons/Prototype.png)Keyword `prototype` has a specific glyph icon
+* ![](../wiki/images/icons/DOMElement.png)Any `DOM element` will be automatically detected and have specific glyph icon
+
 ## Did you find a bug or added some cool stuff? 
 Please post an [issue](issues), fork or edit the code!
 
