@@ -3,6 +3,11 @@
 This project aims to help your `Visual Studio 2012 intellisense` by providing much better
 icons for your code members.
 
+## Got it, gimme [the gems](https://nuget.org/packages/VS2012-Javascript-Intellisense) and skip the borring stuff below :)
+```
+Install-Package VS2012-Javascript-Intellisense
+```
+
 ## What's in the box?
 
 * [Namespaces](VS2012-Javascript-Intellisense#namespaces)
