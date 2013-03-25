@@ -1,6 +1,3 @@
-VS2012-Javascript-Intellisense
-==============================
-
 # VS2012 Javascript Intellisense 
 This project aims to help your `Visual Studio 2012 intellisense` by providing much better
 icons for your members.
