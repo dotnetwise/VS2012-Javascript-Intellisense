@@ -266,3 +266,5 @@ We would love to share your experience with us by [editing this page](wiki/Feedb
 
 # What's next?
 See [Wiki Home](../../wiki) for more details
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/dbb9777718c8e7411beb171c8320a04c "githalytics.com")](http://githalytics.com/DotNetWise/VS2012-Javascript-Intellisense)
