@@ -18,7 +18,7 @@
     <language>en-US</language>
     <projectUrl>https://github.com/DotNetWise/VS2012-Javascript-Intellisense</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://raw.github.com/wiki/dotnetwise/VS2012-Javascript-Intellisense/images/NamespaceValues.png</iconUrl>
+    <iconUrl>https://raw.github.com/wiki/dotnetwise/VS2012-Javascript-Intellisense/images/NugetLogo.png</iconUrl>
     <!--<licenseUrl></licenseUrl>-->
     <copyright>Copyright DotNetWise 2013</copyright>
     <dependencies>
