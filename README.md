@@ -147,7 +147,7 @@ When we'll write `c.` the intellisense would look like:
                         <img src="../../wiki/images/icons/ObjectPrototypeMethod.png" alt="Object.prototype">Distinct
                         icons
                         for <code>Object.prototype</code>'s methods</li>
-                    <li title="This is shown only on functions and is not present in the image">
+                    <li title="This is shown only on functions and is not present in the left image">
                         <img src="../../wiki/images/icons/Prototype.png" alt="prototype"><code>prototype</code>
                         custom icon</li>
                     <li title="All fields starting with on">
