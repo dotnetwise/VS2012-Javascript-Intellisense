@@ -1,7 +1,7 @@
 # VS2012 Javascript Intellisense 
 
 This project aims to help your `Visual Studio 2012 intellisense` by providing much better
-icons for your members.
+icons for your code members.
 
 ## What's in the box?
 
@@ -223,6 +223,12 @@ Color = new Enum({ Red: 1, Yellow: 2, White: 3 });
         </tr>
     </table>
 </div>
+
+## Did you find a bug or added some cool stuff? 
+Please post an [issue](issues), fork or edit the code!
+
+## Did you enjoy it? 
+We would love to share your experience with us by [editing this page](wiki/Feedback)
 
 # What's next?
 See [Wiki Home](../../wiki) for more details
