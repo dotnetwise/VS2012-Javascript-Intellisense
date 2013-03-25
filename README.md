@@ -22,7 +22,7 @@ ns("mvvm/knockout", Demo, "/") //place the namespace in an existing namespace an
 For example
 ```javascript
 $.extend(Demo, {
-    Class: Class,
+	Class: Class,
 	colors: colors,
 	IUser: IUser,
 	map: map,
@@ -222,3 +222,6 @@ Color = new Enum({ Red: 1, Yellow: 2, White: 3 });
         </tr>
     </table>
 </div>
+
+# What's next?
+See [Wiki Home](wiki/Home) for more details
