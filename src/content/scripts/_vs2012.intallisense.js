@@ -11,47 +11,81 @@
 	});
 	intellisense.addEventListener('statementcompletion', function (e) {
 		e.items.forEach(function (item) {
+
 			var value = item.value,
-				parentObject = item.parentObject;
-			if (item.name === "constructor") {
+				parentObject = item.parentObject,
+				kind = item.kind;
+			if (item.name === "constructor" || item.name[0].toUpperCase() == item.name[0] && item.name !== "Math") {
 				item.glyph = 'vs:GlyphGroupClass';
+				item.kind = "method";
 			}
-			else if (item.name === "toString" || item.name === "prototype" || parentObject && item.value == parentObject.prototype) {
+			else if (item.name === "prototype" || parentObject && item.value == parentObject.prototype && parentObject.prototype) {
 				item.glyph = 'vs:GlyphGroupModule';
+			}
+			else if (parentObject && !parentObject.hasOwnProperty(item.name) && item.value === Object.prototype[item.name]) {
+
+				item.kind = "field";
+				//intellisense.logMessage("On Object prototype: " + item.name + ": " + parentObject.hasOwnProperty(item.name).toString() + typeof value);
+				if (typeof value === "function") {
+					item.glyph = "vs:GlyphReference";
+					item.kind = "method";
+				}
+				else item.glyph = "vs:GlyphGroupTypedef";
 			}
 			else if (parentObject && !parentObject.hasOwnProperty(item.name)) {
 
-				intellisense.logMessage(item.name + ": " + parentObject.hasOwnProperty(item.name).toString() + typeof value);
-				//VS2012 bug - it seems these can't be set on prototype (they will be ignored :( )
+				item.kind = "field";
+				//intellisense.logMessage("On prototype: " + item.name + ": " + parentObject.hasOwnProperty(item.name).toString() + typeof value);
 				if (typeof value === "function") {
-					item.glyph = "GlyphExtensionMethod";
+					item.kind = "method";
+					item.glyph = "vs:GlyphExtensionMethod";
 				}
-				else item.glyph = "GlyphGroupTypedef";
+				else item.glyph = "vs:GlyphGroupTypedef";
 			}
 			else if (value && (value._isNamespace || value.__namespace)) {
+				item.kind = "field";
 				item.glyph = 'vs:GlyphGroupNamespace';
 			}
 			else if (value && (value._isClass || value.__class)) {
+				item.kind = "method";
 				item.glyph = 'vs:GlyphGroupClass';
 			}
 			else if (value && (value._isConst || value.__const)) {
+				item.kind = "field";
 				item.glyph = 'vs:GlyphGroupConst';
 			}
 			else if (value && (value._isDelegate || value.__delegate)) {
+				item.kind = "method";
 				item.glyph = 'vs:GlyphGroupDelegate';
 			}
 			else if (value && (value._isInterface || value.__interface)) {
+				//item.value && item.value.__interface && intellisense.logMessage(item.name + " is interface " + item.kind + ", scope: " + item.scope);
 				item.glyph = 'vs:GlyphGroupInterface';
 			}
-			else if ((value && (value._isEvent || value.__event || (value instanceof window.Event) === true))) {
+			else if ((value && (value._isEvent || value.__event || (value instanceof window.Event) === true))
+				|| item.name.indexOf("on") === 0) {
 				//TODO: better handling events
+				item.kind = "method";
 				item.glyph = 'vs:GlyphGroupEvent';
 			}
 			else if (value && (value._isEnum || value.__enum)) {
+				item.kind = "field";
 				item.glyph = 'vs:GlyphGroupEnum';
 			}
+			else if (value && (value._isMap || value.__map)) {
+				item.kind = "field";
+				item.glyph = 'vs:GlyphGroupMap';
+			}
 			else if (value && (value.prototype && value.prototype.nodeType || value.nodeType)) {
+				item.kind = "field";
 				item.glyph = 'vs:GlyphXmlItem';
+			}
+			else if (value === window.document || item.name === "document") {
+				item.kind = "field";
+				item.glyph = 'vs:GlyphLibrary';
+			}
+			else if (value === window) {
+				item.glyph = 'vs:GlyphXmlNamespace';
 			}
 			else if (typeof value === "number") {
 				item.glyph = 'vs:GlyphGroupValueType';
@@ -62,17 +96,19 @@
 			} else if (value instanceof RegExp) {
 				item.glyph = 'vs:GlyphAssembly';
 			} else if (typeof value === "function") {
-				item.glyph = 'vs:GlyphExtensionMethod';
+				item.glyph = 'vs:GlyphGroupMethod';
 			} else if (value === null) {
 				item.glyph = 'vs:GlyphJSharpDocument';
 			} else if (typeof value === "undefined") {
-				if (!parentObject && !reservedKeywords[item.name])
-					if (item.name === "true" || item.name === "false")
-						item.glyph = "vs:GlyphGroupUnion";
+				if (!reservedKeywords[item.name]) {
+					if (!parentObject)
+						if (item.name === "true" || item.name === "false")
+							item.glyph = "vs:GlyphGroupUnion";
+						else item.glyph = 'vs:GlyphMaybeReference';
 					else item.glyph = 'vs:GlyphMaybeReference';
+				}
 			}
-
-			if (parentObject && (parentObject._isNamespace || parentObject.__namespace)) {
+			else if (parentObject && (parentObject._isNamespace || parentObject.__namespace)) {
 				//The item is a member of a namespace. 
 
 				//All constructor functions that are part of a namespace 
@@ -87,20 +123,35 @@
 
 		});
 		e.items = e.items.filter(function (item) {
-			var hidden = item.parentObject
-				? (item.parentObject.__enum || item.parentObject._isEnum)
+			var parentObject = item.parentObject;
+			var hidden = parentObject
+				? (parentObject.__enum || parentObject._isEnum)
 					? item.kind != "field"
 					: false
 				: false;
-
+			if (parentObject && (parentObject.__namespace || parentObject._isNamespace)) {
+				//intellisense.logMessage("Hiding: " + item.name);
+				hidden = Object.prototype.hasOwnProperty(item.name) && !parentObject.hasOwnProperty(item.name);
+			}
 			return !hidden;
 		});
 	});
 
 	intellisense.addEventListener('statementcompletionhint', function (e) {
 		if (e.completionvalue) {
+			//intellisense.logMessage("statementcompletionhint");
 			if (e.completionvalue._isNamespace || e.completionvalue.__namespace) {
 				e.symbolHelp.symbolDisplayType = 'Namespace';
+			}
+			if (e.completionvalue._isInterface || e.completionvalue.__interface) {
+				item.value && item.value.__interface && intellisense.logMessage(item.name + " Interface");
+				e.symbolHelp.symbolDisplayType = 'Interface';
+			}
+			if (e.completionvalue._isClass || e.completionvalue.__class) {
+				e.symbolHelp.symbolDisplayType = 'Class';
+			}
+			if (e.completionvalue._isMap || e.completionvalue.__map) {
+				e.symbolHelp.symbolDisplayType = 'Map';
 			}
 			if (e.completionvalue._isEnum || e.completionvalue.__enum) {
 				e.symbolHelp.symbolDisplayType = 'Enum';
