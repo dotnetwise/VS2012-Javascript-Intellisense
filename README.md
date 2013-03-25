@@ -224,4 +224,4 @@ Color = new Enum({ Red: 1, Yellow: 2, White: 3 });
 </div>
 
 # What's next?
-See [Wiki Home](wiki/Home) for more details
+See [Wiki Home](../../wiki) for more details
