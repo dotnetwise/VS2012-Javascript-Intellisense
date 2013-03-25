@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>VS2012-Javascript-Intellisense</id>
-    <version><![CDATA[1.0.325.1224]]></version>
+    <version><![CDATA[1.0.325.1230]]></version>
     <title>VS2012 Javascript Intellisense</title>
     <authors>DotNetWise</authors>
     <description>Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!</description>
@@ -18,7 +18,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <iconUrl>https://raw.github.com/wiki/dotnetwise/VS2012-Javascript-Intellisense/images/NugetLogo.png</iconUrl>
     <!--<licenseUrl></licenseUrl>-->
-    <copyright>Copyright DotNetWise 2013</copyright>
+    <copyright>Copyright &amp;copy; DotNetWise 2013. This is an open-source project, you can edit and use it for free. Share!</copyright>
     <dependencies>
       <group targetFramework="net40">
       </group>

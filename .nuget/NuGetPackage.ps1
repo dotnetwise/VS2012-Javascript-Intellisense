@@ -238,7 +238,23 @@ function Publish {
         Get-ChildItem bin\*.nupkg | Sort-Object name -descending | Where-Object { $_.Name.EndsWith(".symbols.nupkg") -eq $false } | ForEach-Object { 
 
             # Try to push package
-            $task = Create-Process ..\.Nuget\NuGet.exe ("push " + $_ + " -Source " + $url)
+
+			if ($url -eq "") {
+				Write-Log ("..\.Nuget\NuGet.exe push " + $_)
+				$task = Create-Process ..\.Nuget\NuGet.exe ("push " + $_)
+			}
+			else {
+				if ($url -eq "https://nuget.org/api/v2/") {
+					Write-Log ("..\.Nuget\NuGet.exe push " + $_)
+					$task = Create-Process ..\.Nuget\NuGet.exe ("push " + $_)
+				}
+				else { 
+					Write-Log ("..\.Nuget\NuGet.exe push " + $_ + " -Source " + $url)
+					$task = Create-Process ..\.Nuget\NuGet.exe ("push " + $_ + " -Source " + $url)
+				}
+			}
+
+            
 			Write-Log "Package path: $_" 
             $task.Start() | Out-Null
             $task.WaitForExit()
