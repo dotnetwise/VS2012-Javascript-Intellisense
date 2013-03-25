@@ -15,7 +15,20 @@
 			var value = item.value,
 				parentObject = item.parentObject,
 				kind = item.kind;
-			if (item.name === "constructor" || item.name[0].toUpperCase() == item.name[0] && item.name !== "Math") {
+			if (typeof value === "number") {
+				item.kind = "field";
+				item.glyph = 'vs:GlyphGroupValueType';
+			} else if (typeof value === "string") {
+				item.kind = "field";
+				item.glyph = 'vs:GlyphGroupType';
+			} else if (typeof value === "boolean") {
+				item.kind = "field";
+				item.glyph = 'vs:GlyphGroupUnion';
+			} else if (value instanceof RegExp) {
+				item.kind = "field";
+				item.glyph = 'vs:GlyphAssembly';
+			} 
+			else if (item.name === "constructor" || item.name[0].toUpperCase() == item.name[0] && item.name !== "Math") {
 				item.glyph = 'vs:GlyphGroupClass';
 				item.kind = "method";
 			}
@@ -85,19 +98,14 @@
 				item.glyph = 'vs:GlyphLibrary';
 			}
 			else if (value === window) {
+				item.kind = "field";
 				item.glyph = 'vs:GlyphXmlNamespace';
 			}
-			else if (typeof value === "number") {
-				item.glyph = 'vs:GlyphGroupValueType';
-			} else if (typeof value === "string") {
-				item.glyph = 'vs:GlyphGroupType';
-			} else if (typeof value === "boolean") {
-				item.glyph = 'vs:GlyphGroupUnion';
-			} else if (value instanceof RegExp) {
-				item.glyph = 'vs:GlyphAssembly';
-			} else if (typeof value === "function") {
+			else if (typeof value === "function") {
+				item.kind = "method";
 				item.glyph = 'vs:GlyphGroupMethod';
 			} else if (value === null) {
+				item.kind = "field";
 				item.glyph = 'vs:GlyphJSharpDocument';
 			} else if (typeof value === "undefined") {
 				if (!reservedKeywords[item.name]) {
@@ -126,7 +134,7 @@
 			var parentObject = item.parentObject;
 			var hidden = parentObject
 				? (parentObject.__enum || parentObject._isEnum)
-					? item.kind != "field"
+					? item.kind != "field" 
 					: false
 				: false;
 			if (parentObject && (parentObject.__namespace || parentObject._isNamespace)) {
@@ -235,3 +243,4 @@
 //  vs:GlyphXmlDescendantQuestion		Describes symbols with a question mark for XML descendant elements.
 //  vs:GlyphXmlItem					Describes symbols for XML items.
 //  vs:GlyphXmlNamespace				Describes symbols for XML namespaces.
+

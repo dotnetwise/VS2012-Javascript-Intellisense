@@ -104,12 +104,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="content\scripts\NamespacesAndEnumSupport.js" />
-    <Content Include="content\scripts\_vs2012.intallisense.js" />
+    <Content Include="content\scripts\_vs2012.intellisense.js" />
     <Content Include="content\scripts\_references.js" />
+    <Content Include="Scripts\HTMLPage1.html" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\Test.js" />
+    <Content Include="content\scripts\_vs2012.intellisense.Test.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AssemblyInfo" BeforeTargets="BeforeBuild">

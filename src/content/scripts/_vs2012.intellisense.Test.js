@@ -1,16 +1,12 @@
-﻿/// <reference path="../content/scripts/namespacesandenumsupport.js" />
-/// <reference path="../content/scripts/_vs2012.intallisense.js" />
-/// <reference path="jquery-1.9.1.js" />
-var Namespace = namespace("Namespace");
-
-Color = new Enum({ Red: 1, Yellow: 2, White: 3 });
-
+﻿/// <reference path="namespacesandenumsupport.js" />
+/// <reference path="_vs2012.intellisense.js" />
+/// <reference path="~/scripts/jquery-1.9.1.js" />
 
 
 !function () {
+
 	namespace("Demo.controllers")
-	var ns = Demo;
-	
+
 	function Class() {
 		this.onClick = function () { },
 		this.thisUndefined = undefined;
@@ -31,35 +27,30 @@ Color = new Enum({ Red: 1, Yellow: 2, White: 3 });
 	Class.prototype.protoMethod = function () { };
 	Class.prototype.protoFieldObject = {};
 	Class.prototype.protoFieldBool = false;
-	var c = new Class();
 	function IUser() { }
 	IUser.__interface = true;
+	Demo.controllers.function = function () { };
+	
 
 	var map = {}
 	map.__map = true;
 	var colors = new Enum({ Red: 1, Yellow: 2, Green: 3 });
-	
-	$.extend(ns, {
-		//a: 1,
-		//b:2,
-		Class: Class,
-		colors: colors,
-		IUser: IUser,
-		map: map,
-		fieldFunction: function () {
+	colors.Red;
 
-		},
-		fieldBoolean: false,
-		fieldString: "",
-		fieldNumber: 1,
-	});
+	Demo.Class = Class;
+	Demo.colors = colors;
+	Demo.IUser = IUser;
+	Demo.map = map;
+	Demo.fieldFunction = function () { }
+	Demo.fieldBoolean = false;
+	Demo.fieldString = "";
+	Demo.fieldNumber = 1;
+
+	var c = new Class();
 	
-	c.hasOwnProperty("protoMethod");
-	
-	
+	//uncomment any of these lines to test:
+	//Demo.
+	//Class.
+	//c.
+
 }();
-
-
-
-
-

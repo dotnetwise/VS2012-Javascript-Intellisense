@@ -1,1 +1,1 @@
-﻿/// <reference path="_vs2012.intallisense.js" />
+﻿/// <reference path="_vs2012.intellisense.js" />
