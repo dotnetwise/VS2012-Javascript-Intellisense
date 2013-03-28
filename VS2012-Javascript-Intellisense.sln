@@ -6,6 +6,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CF399000-54A8-4A46-9830-FC39DDE699D0}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\fart.exe = .nuget\fart.exe
+		IntegrationTests.testsettings = IntegrationTests.testsettings
 		.nuget\MakePP.bat = .nuget\MakePP.bat
 		.nuget\nuget.bat = .nuget\nuget.bat
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -14,22 +15,72 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CF3990
 		.nuget\NuGetPackage.ps1 = .nuget\NuGetPackage.ps1
 		.nuget\NuGetSetup.ps1 = .nuget\NuGetSetup.ps1
 		.nuget\transform_all.bat = .nuget\transform_all.bat
+		UnitTests.testsettings = UnitTests.testsettings
 		.nuget\UnmakePP.bat = .nuget\UnmakePP.bat
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VS2012-Javascript-Intellisense-Addon", "VS2012-Javascript-Intellisense-Addon\VS2012-Javascript-Intellisense-Addon.csproj", "{54C786E5-FD14-4036-92AE-E9F25B71534B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSIntellisense", "JSIntellisense\JSIntellisense.csproj", "{57B5092F-40FA-4CBB-8859-72290943A559}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
 		NuPack|Any CPU = NuPack|Any CPU
+		NuPack|Mixed Platforms = NuPack|Mixed Platforms
+		NuPack|Win32 = NuPack|Win32
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Win32.ActiveCfg = Debug|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.NuPack|Any CPU.ActiveCfg = NuPack|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.NuPack|Any CPU.Build.0 = NuPack|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.NuPack|Mixed Platforms.ActiveCfg = NuPack|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.NuPack|Mixed Platforms.Build.0 = NuPack|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.NuPack|Win32.ActiveCfg = NuPack|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Win32.ActiveCfg = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.NuPack|Any CPU.ActiveCfg = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.NuPack|Any CPU.Build.0 = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.NuPack|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.NuPack|Mixed Platforms.Build.0 = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.NuPack|Win32.ActiveCfg = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{54C786E5-FD14-4036-92AE-E9F25B71534B}.Release|Win32.ActiveCfg = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.NuPack|Any CPU.ActiveCfg = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.NuPack|Any CPU.Build.0 = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.NuPack|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.NuPack|Mixed Platforms.Build.0 = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.NuPack|Win32.ActiveCfg = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{57B5092F-40FA-4CBB-8859-72290943A559}.Release|Win32.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
