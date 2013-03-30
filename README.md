@@ -13,7 +13,7 @@ Install-Package VS2012-Javascript-Intellisense
 * [Namespaces](VS2012-Javascript-Intellisense#namespaces)
 * [Classes](VS2012-Javascript-Intellisense#classes)
 * [Enums](VS2012-Javascript-Intellisense#enums)
-* [.call and .apply proper description](VS2012-Javascript-Intellisense#call-and-apply-proper-description)
+* [`function.call` and `function.apply` proper description](VS2012-Javascript-Intellisense#call-and-apply-proper-description)
 
 ## Namespaces
 
