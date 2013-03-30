@@ -160,10 +160,6 @@
 			}
 			return !hidden;
 		});
-		e.items.forEach(function (item) {
-			item.kind = "field";
-			item.scope = "field";
-		});
 	});
 
 	intellisense.addEventListener('statementcompletionhint', function (e) {
