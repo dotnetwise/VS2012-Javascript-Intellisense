@@ -254,7 +254,8 @@ Besides the explicit setting of the above options, following rules apply:
  * ![](../../wiki/images/icons/Undefined.png)`undefined`
 * ![](../../wiki/images/icons/Class.png)Anything named `constructor` is always considered a Class
 * ![](../../wiki/images/icons/ObjectPrototypeMethod.png)Methods defined on `Object.prototype` have specific glyph icon
-* ![](../../wiki/images/icons/PrototypeMethod.png)Methods defined on custom `.prototype` have specific glyph icon (like an external method)
+* ![](../../wiki/images/icons/Delegate.png)Methods defined on `constructor.prototype` have specific glyph icon (like a delegate - unfortunatelly VS2012 icons are too limited!!)
+* ![](../../wiki/images/icons/PrototypeMethod.png)Methods defined on inherited `.prototype` have specific glyph icon (like an external method)
 * ![](../../wiki/images/icons/Prototype.png)Keyword `prototype` has a specific glyph icon
 * ![](../../wiki/images/icons/DOMElement.png)Any `DOM element` will be automatically detected and have specific glyph icon
 
