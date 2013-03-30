@@ -580,6 +580,11 @@
 							signature.param = [signature.param];
 						each(signature.param, function (index, param) {
 							param.description = param.__value;
+							each(["integer", "domElement", "mayBeNull", "elementInteger", "elementDomElement", "elementMayBeNull", "parameterArray", "optional"], function (index, attr) {
+								if (typeof param[attr] === "string")
+									param[attr] = param[attr] == "true" || param[attr] == "1" || param[attr] == true;
+							});
+							
 							delete param.__value;
 							s.params.push(param);
 						});
