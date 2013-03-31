@@ -13,7 +13,7 @@ Install-Package VS2012-Javascript-Intellisense
 * [Namespaces](VS2012-Javascript-Intellisense#namespaces)
 * [Classes](VS2012-Javascript-Intellisense#classes)
 * [Enums](VS2012-Javascript-Intellisense#enums)
-* [`function.call` and `function.apply` proper description](VS2012-Javascript-Intellisense#call-and-apply-proper-description)
+* [`function.call` and `function.apply` proper documentation](VS2012-Javascript-Intellisense#call-and-apply-proper-documentation)
 
 ## Namespaces
 
@@ -260,7 +260,7 @@ Besides the explicit setting of the above options, following rules apply:
 * ![](../../wiki/images/icons/Prototype.png)Keyword `prototype` has a specific glyph icon
 * ![](../../wiki/images/icons/DOMElement.png)Any `DOM element` will be automatically detected and have specific glyph icon
 
-## `.call` and `.apply` proper documentation
+# `.call` and `.apply` proper documentation
 By default, in VS2012 the description of `.call` and `.apply` methods is missing. This should be the method's description + adding the extra this argument.
 Here it is!
 * `method(`
