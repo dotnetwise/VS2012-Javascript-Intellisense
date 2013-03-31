@@ -1,9 +1,9 @@
 # VS2012 Javascript Intellisense 
 
-This project aims to help your `Visual Studio 2012 intellisense` by providing much better
-icons for your code members.
+This project aims to help your `Visual Studio 2012 intellisense` by providing intelligent
+icons for your code members and better function description.
 
-## Got it, gimme [the gems](https://nuget.org/packages/VS2012-Javascript-Intellisense) and skip the borring stuff below :)
+### Got it, gimme [the gems](https://nuget.org/packages/VS2012-Javascript-Intellisense) and skip the borring stuff below :)
 ```
 Install-Package VS2012-Javascript-Intellisense
 ```
