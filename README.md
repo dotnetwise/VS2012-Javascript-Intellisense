@@ -1,18 +1,19 @@
 # VS2012 Javascript Intellisense 
 
-This project aims to help your `Visual Studio 2012 intellisense` by providing much better
-icons for your code members.
+This project aims to help your `Visual Studio 2012 intellisense` by providing intelligent
+icons for your code members and better function description.
 
-## Got it, gimme [the gems](https://nuget.org/packages/VS2012-Javascript-Intellisense) and skip the borring stuff below :)
+### Got it, gimme [the gems](https://nuget.org/packages/VS2012-Javascript-Intellisense) and skip the borring stuff below :)
 ```
 Install-Package VS2012-Javascript-Intellisense
 ```
 
 ## What's in the box?
 
-* [Namespaces](VS2012-Javascript-Intellisense#namespaces)
-* [Classes](VS2012-Javascript-Intellisense#classes)
-* [Enums](VS2012-Javascript-Intellisense#enums)
+* [Namespaces](#namespaces)
+* [Classes](#classes)
+* [Enums](#enums)
+* [`function.call` and `function.apply` proper documentation](#call-and-apply-proper-documentation)
 
 ## Namespaces
 
@@ -258,6 +259,16 @@ Besides the explicit setting of the above options, following rules apply:
 * ![](../../wiki/images/icons/PrototypeMethod.png)Methods defined on inherited `.prototype` have specific glyph icon (like an external method)
 * ![](../../wiki/images/icons/Prototype.png)Keyword `prototype` has a specific glyph icon
 * ![](../../wiki/images/icons/DOMElement.png)Any `DOM element` will be automatically detected and have specific glyph icon
+
+# `.call` and `.apply` proper documentation
+By default, in VS2012 the description of `.call` and `.apply` methods is missing. This should be the method's description + adding the extra this argument.
+Here it is!
+* `method(`
+![](../../wiki/images/MethodHint.png)
+* `method.call(`
+![](../../wiki/images/MethodHintCall.png)
+* `method.apply(`
+![](../../wiki/images/MethodHintApply.png)
 
 ## Did you find a bug or added some cool stuff? 
 Please post an [issue](issues), fork or edit the code!
