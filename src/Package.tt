@@ -28,7 +28,7 @@
     <frameworkAssemblies>
     </frameworkAssemblies>
     <references></references>
-    <tags>Javascript,VS2012,Intellisense</tags>
+    <tags>Javascript VS2012 intellisense enum namespace class prototype method object autocomplete dotnetwise dnw</tags>
   </metadata>
   <files>
     <file src="lib\" target="lib" />
