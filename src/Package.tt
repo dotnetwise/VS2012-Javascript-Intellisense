@@ -11,6 +11,7 @@
     <description>Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!</description>
     <owners>DotNetWise</owners>
     <releaseNotes>
+      Added custom __glyph support. Set it to a valid glyph icon and will take precedence.
     </releaseNotes>
     <summary>
       Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!
