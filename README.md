@@ -241,7 +241,7 @@ You can set any of these on your objects/functions accordingly:
 * ![](../../wiki/images/icons/Const.png)`__const = true` - makes an object to look like a constant
 * ![](../../wiki/images/icons/Event.png)`__event = true` - makes an object to look like an event
 * ![](../../wiki/images/icons/Delegate.png)`__delegate = true` - makes a function to look like a delegate
-* ![](../../wiki/images/icons/Delegate.png)`__glyph = "a valid glyph name"` - that member will always be drawn with the provided glyph
+* ![](../../wiki/images/icons/Delegate.png)`__glyph = "a valid glyph name"` - that member will always be drawn with the provided glyph. [See all glyphs)(../../wiki/All-Icons)
 * ![](../../wiki/images/icons/Delegate.png)`__hidden = true` - that member will always be hidden from intellisense
 	* Note `__glyph` and `__hiddeen` are only working on objects and functions but not on literals numbers and boolean
 
