@@ -3,13 +3,14 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>VS2012-Javascript-Intellisense</id>
-    <version><![CDATA[1.0.404.2320]]></version>
+    <version><![CDATA[1.0.404.2329]]></version>
     <title>VS2012 Javascript Intellisense</title>
     <authors>DotNetWise</authors>
     <description>Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!</description>
     <owners>DotNetWise</owners>
     <releaseNotes>
       Added custom __glyph support. Set it to a valid glyph icon and will take precedence.
+      Added __hidden support. Set it to a truish value and that element will not be displayed!
     </releaseNotes>
     <summary>
       Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!

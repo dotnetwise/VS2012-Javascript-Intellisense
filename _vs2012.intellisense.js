@@ -141,6 +141,8 @@
 
 		});
 		e.items = e.items.filter(function (item) {
+			if (item.value && item.value.__hidden)
+				return false;
 			var parentObject = item.parentObject;
 			var hidden = parentObject
 				? (parentObject.__enum || parentObject._isEnum)
