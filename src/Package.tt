@@ -11,6 +11,8 @@
     <description>Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!</description>
     <owners>DotNetWise</owners>
     <releaseNotes>
+      Dropped window.vs2012intellisense. Fallback on window.intellisense
+      Added commented code for WAssert and String.format so you can use them in order to write intellisense specific code that won't get in the .min.js files
       Added custom __glyph support. Set it to a valid glyph icon and will take precedence.
       Added __hidden support. Set it to a truish value and that element will not be displayed!
     </releaseNotes>
