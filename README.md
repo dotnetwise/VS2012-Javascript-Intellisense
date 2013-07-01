@@ -245,11 +245,12 @@ You can set any of these on your objects/functions accordingly:
 * ![](../../wiki/images/icons/ObservableArray.png)`__observableArray = true` - makes a function to look like an observable array
 * ![](../../wiki/images/icons/Computed.png)`__computed = true` - makes a function to look like a computed observable
 * ![](../../wiki/images/icons/Delegate.png)`__glyph = "a valid glyph name"` - that member will always be drawn with the provided glyph. [See all glyphs](../../wiki/All-Icons)
-* ![](../../wiki/images/icons/Delegate.png)`__hidden = true` - that member will always be hidden from intellisense
+* __hidden = true` - that member will always be hidden from intellisense
 
-> Note: `__glyph` and `__hiddeen` are only working on objects and functions but not on literals numbers and boolean
+> Note 1: `__glyph` and `__hiddeen` are only working on objects and functions but not on literals numbers and boolean
 
-> Note: `__computed`, `__observable` and `__observableArray` can happen automatically if you do some small changes to knockout.debug.js file
+
+> Note 2: `__computed`, `__observable` and `__observableArray` can happen automatically if you do some small changes to knockout.debug.js file
 
 ## Implicit options
 Besides the explicit setting of the above options, following rules apply:
