@@ -1,9 +1,9 @@
 # VS2012 Javascript Intellisense 
 
-This project aims to help your `Visual Studio 2012 intellisense` by providing intelligent
+This project aims to help your `Visual Studio 2012 Intellisense` by providing intelligent
 icons for your code members and better function description.
 
-### Got it, gimme [the gems](https://nuget.org/packages/VS2012-Javascript-Intellisense) and skip the borring stuff below :)
+### Got it, gimme [the gems](https://nuget.org/packages/VS2012-Javascript-Intellisense) and skip the boring stuff below :)
 ```
 Install-Package VS2012-Javascript-Intellisense
 ```
@@ -85,7 +85,7 @@ When we'll write `Demo.` the intellisense would look like:
                         <img src="../../wiki/images/icons/Interface.png" alt="Interface" /><code>Interface</code> icon
                     </li>
                     <li title="functions or objects with __map == true"><code>map</code>-like objects icon</li>
-                    <li title="Although they are still accessible, intellisese just hides them">Automcatically hide
+                    <li title="Although they are still accessible, intellisense just hides them">Automcatically hide
                         Object.prototype methods in namespaces</li>
                 </ul>
             </td>
@@ -189,7 +189,7 @@ When we'll write `c.` the intellisense would look like:
 </div>
 
 ## Enums
-Although javascript doesn't support `enums` in the .NET sense, it can be very simple achived
+Although javascript doesn't support `enums` in the .NET sense, it can be very simply achieved
 as we can defined as an object<br />
 To enable the feature either use the `Enum` function or manually set `__enum = true` on your
 object.
