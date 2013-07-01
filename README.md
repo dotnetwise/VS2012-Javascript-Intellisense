@@ -250,7 +250,7 @@ You can set any of these on your objects/functions accordingly:
 > Note 1: `__glyph` and `__hiddeen` are only working on objects and functions but not on literals numbers and boolean
 
 
-> Note 2: `__computed`, `__observable` and `__observableArray` can happen automatically if you do some small changes to knockout.debug.js file
+> Note 2: `__computed`, `__observable` and `__observableArray` can happen automatically if you do some small changes to knockout.debug.js file [See more here](../../wiki/Knockout-Enhancements)
 
 ## Implicit options
 Besides the explicit setting of the above options, following rules apply:
