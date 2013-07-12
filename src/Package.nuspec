@@ -3,12 +3,13 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>VS2012-Javascript-Intellisense</id>
-    <version><![CDATA[1.0.712.2118]]></version>
+    <version><![CDATA[1.0.712.2147]]></version>
     <title>VS2012 Javascript Intellisense</title>
     <authors>DotNetWise</authors>
     <description>Enhanced VS2012 Javascript intellisense for variables, properties, methods even prototype's methods!</description>
     <owners>DotNetWise</owners>
     <releaseNotes>
+      Fixed &lt;br/>&gt; xml2json serialization
       Added intellisense.inheritXMLDoc and intellisense.cloneXMLDoc helpers so you can copy XMLDoc from one function to another
       Added support for __computed, __observable and __observableArray
       __namespace and __enum are now non-enumerable
