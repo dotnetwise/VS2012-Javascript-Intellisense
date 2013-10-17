@@ -1,4 +1,14 @@
-﻿window.namespace = window.ns = function (names, container, separator) {
+﻿(!function () {
+	try{
+		Object.defineProperty({}, "test", {});
+	}
+	catch(e) {
+		Object.defineProperty = function(o, name, descriptor) {
+			o[name] = descriptor && descriptor.value;
+		}
+	}
+});
+window.namespace = window.ns = function (names, container, separator) {
 	/// <summary>Defines a new namespace. You can specify multiple nested namespaces separated by dot(s) i.e. DemoApp.controllers.customer</summary>
 	/// <param name="names" type="String">Specify the name or names of the namespace separated by dot(s). i.e. DemoApp or DemoApp.controllers</param>
 	/// <param name="separator" type="String">Specify a custom separator different than "dot" if desired</param>
@@ -10,7 +20,7 @@
 	  len;
 	for (i = 0, len = ns.length; i < len; i++) {
 		o = o[ns[i]] = o[ns[i]] || {};
-		if (!o.__namespace)
+		if (window.intellisense && !o.__namespace)
 			Object.defineProperty
 				? Object.defineProperty(o, "__namespace", { enumerable: false, value: true })
 				: (o.__namespace = true);
@@ -23,7 +33,7 @@ function Enum(values) {
 	/// <param name="values" type="PlainObject">Specify the values of the enum i.e. { Red: 1, Green: 2, Blue: 3}</param>
 
 	var _enum = values || {};
-	if (!_enum.__enum)
+	if (window.intellisense && !_enum.__enum)
 		Object.defineProperty
 			? Object.defineProperty(_enum, "__enum", { enumerable: false, value: true })
 			: (_enum.__enum = true);
